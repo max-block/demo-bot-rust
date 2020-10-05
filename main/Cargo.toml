@@ -1,0 +1,9 @@
+[package]
+name = "main"
+version = "0.1.0"
+authors = ["Max Block <maxblock@pm.me>"]
+edition = "2018"
+
+[dependencies]
+core = {path = "../core"}
+server = {path = "../server"}
