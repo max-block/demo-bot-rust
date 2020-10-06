@@ -1,12 +1,13 @@
+pub mod db;
+pub mod error;
+pub mod models;
+
 use std::rc::Rc;
 
 use db::DB;
 use error::CoreError;
 use services::bot::BotService;
 
-pub mod db;
-pub mod error;
-pub mod models;
 pub mod services;
 
 pub struct Core {
