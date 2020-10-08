@@ -1,4 +1,4 @@
-use core::{db::CreateWorkerParams, error::CoreError, services::bot::UpdateBotParams, Core};
+use core::{error::CoreError, services::bot::UpdateBotParams, Core};
 
 fn main() -> Result<(), CoreError> {
     let mut core: Core = Core::new("mongodb://localhost/demo-rust-rocket-mongodb")?;
@@ -18,10 +18,10 @@ fn main() -> Result<(), CoreError> {
     //     proxy: None,
     // })?;
 
-    let res = core.db.find_workers(None, Some(false), 300)?;
+    let res = core.worker.find(None, Some(false), 300)?;
     dbg!(res);
 
-    let res = core.db.find_workers_for_work(10, 10)?;
+    let res = core.worker.find_work(10, 10)?;
     dbg!(res);
 
     Ok(())
